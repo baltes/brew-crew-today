@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew Crew Today</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="checker" aria-labelledby="app-title">
+        <div class="masthead">
+          <p class="eyebrow">Milwaukee Brewers</p>
+          <h1 id="app-title">Brew Crew Today</h1>
+        </div>
+
+        <form class="date-form" id="date-form">
+          <label for="game-date">Pick a date</label>
+          <div class="date-row">
+            <input id="game-date" name="game-date" type="date" required />
+            <button class="secondary-button" type="button" id="today-button">Today</button>
+            <button type="submit">Check</button>
+          </div>
+        </form>
+
+        <section class="result" id="result" aria-live="polite">
+          <p class="status-label">Ready</p>
+          <h2>Choose a date to see if the Brewers play.</h2>
+          <p class="details">We will show the opponent, venue, and local first pitch time.</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
