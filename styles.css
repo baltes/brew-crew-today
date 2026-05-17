@@ -1,0 +1,201 @@
+:root {
+  color-scheme: light;
+  --navy: #12284b;
+  --gold: #ffc52f;
+  --cream: #f7f4ec;
+  --ink: #182033;
+  --muted: #5e6878;
+  --line: #d9d0bb;
+  --field: #e8efe6;
+  --white: #fffdf8;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(18, 40, 75, 0.08), transparent 38%),
+    linear-gradient(180deg, var(--field), var(--cream));
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+}
+
+.checker {
+  width: min(720px, 100%);
+  display: grid;
+  gap: 24px;
+}
+
+.masthead {
+  border-left: 8px solid var(--gold);
+  padding-left: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  color: var(--navy);
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 0.95;
+}
+
+.date-form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+}
+
+input[type="date"] {
+  min-height: 48px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--white);
+  padding: 0 14px;
+}
+
+button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--navy);
+  color: white;
+  font-weight: 800;
+  padding: 0 18px;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--navy);
+}
+
+.result {
+  min-height: 240px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.84);
+  padding: 28px;
+  box-shadow: 0 18px 50px rgba(18, 40, 75, 0.13);
+}
+
+.status-label {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 6px 10px;
+  text-transform: uppercase;
+}
+
+.result h2 {
+  color: var(--navy);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  line-height: 1.04;
+}
+
+.details {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.game-facts {
+  display: grid;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.fact {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.fact span:first-child {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.fact span:last-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.error .status-label {
+  background: #f6c7bd;
+  color: #771f13;
+}
+
+@media (max-width: 560px) {
+  .date-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  input[type="date"] {
+    grid-column: 1 / -1;
+  }
+
+  .result {
+    padding: 22px;
+  }
+
+  .fact {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
